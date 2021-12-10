@@ -1,6 +1,8 @@
 package main
 
 import (
+    "github.com/Mrs4s/go-cqhttp/cmd/gocq"
+	"github.com/Mrs4s/go-cqhttp/coolq"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -13,7 +15,6 @@ import (
 	"github.com/beego/beego/v2/server/web"
 	"github.com/cdle/xdd/controllers"
 	"github.com/cdle/xdd/models"
-	"github.com/cdle/xdd/qbot"
 )
 
 var theme = ""
@@ -71,11 +72,13 @@ func main() {
 	web.BConfig.WebConfig.Session.SessionGCMaxLifetime = 3600
 	web.BConfig.WebConfig.Session.SessionName = models.AppName
 	go func() {
-		time.Sleep(time.Second * 4)
+		time.Sleep(time.Second * 8)
 		(&models.JdCookie{}).Push("小滴滴已启动")
 	}()
 	if models.Config.QQID != 0 || models.Config.QQGroupID != 0 {
-		go qbot.Main()
+		go gocq.Main()
+		coolq.PrivateMessageEventCallback = models.ListenQQPrivateMessage
+		coolq.GroupMessageEventCallback = models.ListenQQGroupMessage
 	}
 	web.Run()
 }
