@@ -17,9 +17,8 @@ return reply(
     
 return reply(      
     [
-        `登录` => `请输入手机号码______`           
-        `查询` => `请先获取cookie，把获取到的cookie发送给机器人再输入“查询”`
-        `公告` => `暂无`
+        `登录|登陆` => `请输入手机号码______`           
+        `公告` => `暂无公告`
     ]
     
 return reply(      
@@ -29,7 +28,7 @@ return reply(
         `美女` => `https://api.lyiqk.cn/purelady`
         `姐姐` => `lsp,爬`          
         `妹妹` => `https://laosepi.org/pic.php`         
-        `.*(老司机|lsp|老骚批|福利).*` => `http://3650000.xyz/random/?mode=66`
+        `.*(老司机|lsp|福利).*` => `http://3650000.xyz/random/?mode=66`
     ]   
     
 return reply(      
