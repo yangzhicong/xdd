@@ -72,7 +72,7 @@ func main() {
 	web.BConfig.WebConfig.Session.SessionGCMaxLifetime = 3600
 	web.BConfig.WebConfig.Session.SessionName = models.AppName
 	go func() {
-		time.Sleep(time.Second * 8)
+		time.Sleep(time.Second * 10)
 		(&models.JdCookie{}).Push("小滴滴已启动")
 	}()
 	if models.Config.QQID != 0 || models.Config.QQGroupID != 0 {
