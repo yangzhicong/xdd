@@ -84,7 +84,7 @@ func JdcSendSMS(sender *Sender, phone string) error {
 			}
 			if obj.Data.Status == 666 {
                 if obj.Data.Captcha == 2 {
-					sender.Reply("出现文字验证码请前往手动验证：" + Config.JDCAddress + "/Captcha/" + phone)
+					sender.Reply("出现文字验证码，请复制到浏览器手动验证：" + Config.JDCAddress + "/Captcha/" + phone)
 				} else {
 					JdcAutoCaptcha(sender, phone, 1)
 				}
