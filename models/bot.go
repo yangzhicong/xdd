@@ -124,7 +124,7 @@ var handleMessage = func(msgs ...interface{}) interface{} {
 						} else {
 							sender.Reply("登录失败，请输入手机号重新登录...")
 						}
-					case <-time.After(180 * time.Second):
+					case <-time.After(60 * time.Second):
 						sender.Reply("验证码超时，请输入手机号重新登录。")
 						return
 
