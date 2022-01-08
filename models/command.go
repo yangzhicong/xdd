@@ -95,6 +95,13 @@ func (sender *Sender) handleJdCookies(handle func(ck *JdCookie)) error {
 var codeSignals = []CodeSignal{
 
 	{
+		Command: []string{"登录", "登陆"},
+		Handle: func(s *Sender) interface{} {
+			s.Reply(fmt.Sprintf("请输入手机号___________ 或者前往 %s 进行登录", Config.JDCAddress))
+			return nil
+		},
+	},	
+	{
 		Command: []string{"status", "状态"},
 		Admin:   true,
 		Handle: func(sender *Sender) interface{} {
