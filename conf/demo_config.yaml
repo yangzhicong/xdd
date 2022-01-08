@@ -25,4 +25,4 @@ default_priority:
 no_ghproxy: false
 daily_asset_push_cron: 5 20 * * *
 repos:
-  - git: https://github.com/yangzhicong/scripts.git
+  - git: #https://github.com/yangzhicong/scripts.git
