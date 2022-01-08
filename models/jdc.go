@@ -122,7 +122,7 @@ func JdcAutoCaptcha(sender *Sender, phone string, number int) {
 			time.Sleep(time.Millisecond * 1000)
 			JdcAutoCaptcha(sender, phone, number+1)
 		} else {
-			sender.Reply("安全认证失败，请联系管理员或者前往网页手动登录,网址 yzc.yangcong.ml:5701")
+			sender.Reply("安全认证失败，请联系管理员或者前往网页手动登录,网址 yzc.yzcong.xyz:5701")
 		}
 	}
 }
