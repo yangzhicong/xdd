@@ -68,19 +68,12 @@ module.exports = cookies`, cookies))
 			f.Close()
 			WriteHelpJS(cks)
 			go CopyConfigAll()
-			// tmp = []JdCookie{}
-			// for _, ck := range cks {
-			// 	if ck.Hack != True {
-			// 		tmp = append(tmp, ck)
-			// 	}
-			// }
-			// cks = tmp
 			if Config.Mode == Parallel {
 				for i := range Config.Containers {
 					(&Config.Containers[i]).read()
 				}
 				for i := range Config.Containers {
-					(&Config.Containers[i]).write(cks)
+					(&Config.Containers[i]).Write(cks)
 				}
 			} else {
 				resident := []JdCookie{}
@@ -164,10 +157,10 @@ module.exports = cookies`, cookies))
 					break
 				}
 				for i := range bs {
-					bs[i].Container.write(append(resident, bs[i].Ready...))
+					bs[i].Container.Write(append(resident, bs[i].Ready...))
 				}
 				for i := range parallels {
-					parallels[i].write(append(resident, bat...))
+					parallels[i].Write(append(resident, bat...))
 				}
 			}
 			if init {
