@@ -190,6 +190,9 @@ var handleMessage = func(msgs ...interface{}) interface{} {
 								msg := fmt.Sprintf("更新账号，%s", ck.PtPin)
 								(&JdCookie{}).Push(msg)
 								logs.Info(msg)
+								if sender.UserID != int(Config.QQID) {
+								    sender.Reply(fmt.Sprintf("更新账号，%s", ck.PtPin))
+								}
 							} else {
 								if Cdle {
 									ck.Hack = True
