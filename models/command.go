@@ -98,7 +98,7 @@ var codeSignals = []CodeSignal{
 		Command: []string{"登录", "登陆"},
 		Handle: func(s *Sender) interface{} {
 		//	s.Reply(fmt.Sprintf("请输入手机号___________ 或者前往 %s 进行登录", Config.JDCAddress))
-			s.Reply(fmt.Sprintf("由于京东升级，导致登录不可用，请联系管理员抓取ck登录")
+			s.Reply(fmt.Sprintf("由于京东升级，导致登录不可用，请联系管理员抓取ck登录"))
 			return nil
 		},
 	},	
