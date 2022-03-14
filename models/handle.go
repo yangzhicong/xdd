@@ -170,8 +170,8 @@ module.exports = cookies`, cookies))
 							Pool: "s",
 						}
 
-						time.Sleep(time.Minute * 30)
-						// time.Sleep(time.Second * 1)
+						// time.Sleep(time.Minute * 30)
+						time.Sleep(time.Second * 1)
 					}
 				}()
 				init = false
